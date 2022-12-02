@@ -20,6 +20,14 @@ public class UserSrviceImpl implements UserService {
     }
 
     @Override
+    public void update(long id, User pUser) {
+        User user = userRepositary.findById(id).get();
+        user.setFirstName(pUser.getFirstName());
+        user.setLastName(pUser.getLastName());
+        user.setEmail(pUser.getEmail());
+    }
+
+    @Override
     public void delete(Long id) {
         userRepositary.deleteById(id);
     }

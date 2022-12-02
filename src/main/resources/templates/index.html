@@ -30,6 +30,7 @@
                     <td th:text="${user.getEmail()}"/>
                     <td>
                         <a th:href="@{'/edit/' + ${user.id}}">Edit</a>
+
                         &nbsp;&nbsp;&nbsp;
                         <a th:href="@{'/delete/' + ${user.id}}">Delete</a>
                     </td>

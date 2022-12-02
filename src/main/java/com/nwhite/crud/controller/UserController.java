@@ -49,6 +49,13 @@ public class UserController {
         return mav;
     }
 
+    @RequestMapping("/{id}")
+    public String update(@ModelAttribute("user") User user,
+                         @PathVariable("id") long id) {
+        userService.update(id,user);
+        return "redirect:/";
+    }
+
     @RequestMapping("/delete/{id}")
     public String deleteUser(@PathVariable(name = "id") Long id) {
         userService.delete(id);
